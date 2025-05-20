@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.fixed{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header_container{
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    height: 70px;
+}
+.logo_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+}
+.logo_container img{
+    width: 80%;
+    padding-top: 5px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+.delivery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-weight: bold;
+    padding: 5px;
+}
+.delivery p{
+    font-size: 10px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    
+}
+.search input,.search select{
+    padding: 13px;
+    outline: 1px solid white;
+    font-weight: bold;
+}
+.search select{
+   border: none;
+}
+.search input{
+   border: 1px solid white;
+   width: 100%;
+   margin-right: -2px;
+}
+.search svg{
+   padding: 5px;
+   background: #febd69;
+   color: #1a1a1a;
+}
+.search svg:hover{
+    background-color: #d49644;
+}
+.search:focus-within{
+    border: 2px solid rgb(235, 161, 173);
+}
+.orders_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 450px;
+}
+.orders_container a{
+   text-decoration: none;
+   color: white;
+}
+.orders_container p{
+    font-size: 10px;
+}
+.flag{
+    width: 90px;
+    display: flex;
+    padding: 10px;
+}
+.flag select{
+    background-color: #1a1a1a;
+    border: none;
+    color: white;
+}
+.flag img{
+    width: 60%;
+    height: 20px;
+    padding-top: 5px;
+}
+.cart{
+    position: relative;
+}
+.cart span{
+    position: absolute;
+    top:6px;
+    background-color: #1a1a1a;
+    color: orange;
+    left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+.orders_container a,
+.delivery,
+.logo_container a{
+    box-sizing: border-box;
+    padding: 10px;
+    min-height: 50px;
+}
+.orders_container a:hover,
+.delivery:hover,
+.logo_container a:hover,
+.lower_header ul li:hover
+{
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.lower_header{
+    background-color: #232f3e;
+    color: white;
+}
+.lower_header ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.lower_header ul li{
+    padding: 8px;
+}
+.lower_header ul li:first-child{
+   display: flex;
+   gap: 3px;
+    align-items: center;
+}
