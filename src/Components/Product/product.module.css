@@ -1,0 +1,270 @@
+/* Card container */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 16px; 
+  overflow: hidden; 
+}
+
+/*
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+*/
+
+/* Flexed layout for cart page (image and content side by side) */
+.productFlexed {
+  flex-direction: row;
+  align-items: stretch; 
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Image container */
+.imageContainer {
+  width: 240px;
+  height: 340px;
+  align-self: center; 
+  margin-bottom: 16px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Specifics for image container when in productFlexed layout */
+.productFlexed .imageContainer {
+  align-self: stretch; 
+  margin-bottom: 0; 
+}
+
+.productImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.productImage:hover {
+  transform: scale(1.05);
+}
+
+/* Product details (title, description, rating, price, etc.) */
+.productDetails {
+  flex: 1; 
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+/* Product title */
+.title {
+  font-size: 17px;
+  font-weight: 400;
+  color: #007185;
+  margin: 0;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+/* Product description */
+.description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Rating container */
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ratingCount {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Price */
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+/* Add to cart button */
+.addToCart {
+  background: #ffd814;
+  border: 1px solid #f7c600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f1111;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: auto; 
+
+}
+
+.addToCart:hover {
+  background: #f7c600;
+  transform: scale(1.02);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    padding: 12px;
+  }
+
+  .productFlexed {
+    flex-direction: column; 
+    align-items: initial; 
+    gap: 16px;
+    padding: 12px; 
+  }
+
+  .imageContainer,
+  .productFlexed .imageContainer { 
+    width: 120px;
+    height: 120px;
+    align-self: center; 
+    margin-bottom: 12px; 
+  }
+
+  .productDetails {
+    padding: 0; 
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .addToCart {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 10px;
+  }
+
+  .productFlexed {
+    padding: 10px; 
+  }
+
+  .imageContainer,
+  .productFlexed .imageContainer { 
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px; 
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .ratingCount {
+    font-size: 12px;
+  }
+
+  .addToCart {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Product section container */
+.productSection {
+  /* max-width: 1200px; */
+  width: 80%;
+  margin: 24px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Loading state */
+.loading {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+  padding: 48px 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Error state */
+.error {
+  font-size: 18px;
+  font-weight: 500;
+  color: #b12704;
+  text-align: center;
+  padding: 48px 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive design for Product Section, Loading, Error */
+@media (max-width: 768px) {
+  .productSection {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .loading,
+  .error {
+    font-size: 16px;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .productSection {
+    grid-template-columns: 1fr; 
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .loading,
+  .error {
+    font-size: 14px;
+    padding: 32px 0;
+  }
+}

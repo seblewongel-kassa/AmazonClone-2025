@@ -1,15 +1,14 @@
-import Header from "./Components/Header/Header"
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./Router";
 
 
 function App() {
- 
-
   return (
     <>
-      <Header/>
-        
+      <AppRouter />
+      {/* <Landing /> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
