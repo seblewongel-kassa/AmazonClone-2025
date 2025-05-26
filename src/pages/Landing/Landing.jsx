@@ -1,14 +1,14 @@
 import React from "react";
-import Carousel from '../../Components/Carousel/Carousel'
+import CarouselEffect from "../../Components/Carousel/CarouselEffect";
+import Categories from "../../Components/Category/Categories";
+import Product from "../../Components/Products/Product";
 import LayOut from "../../Components/LayOut/LayOut";
-import Category from "../../Components/Category/Category";
-import Product from "../../Components/Product/Product";
 
 const Landing = () => {
   return (
     <LayOut>
-      <Carousel />
-      <Category /> 
+      <CarouselEffect />
+      <Categories />
       <Product />
     </LayOut>
   );

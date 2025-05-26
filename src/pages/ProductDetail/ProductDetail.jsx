@@ -1,34 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import LayOut from '../../Components/LayOut/LayOut';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { productUrl } from '../../Api/endPoints';
-import ProductCard from '../../Components/Product/ProductCard';
-// import Loader from '../../Components/Loder/Loder';
+import React, { useEffect, useState } from 'react'
+import LayOut from '../../Components/LayOut/LayOut'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import { productUrl } from '../../Api/endPoint'
+import ProductCard from '../../Components/Products/ProductCard'
+import Loader from '../../Components/Loader/Loader'
 
 const ProductDetail = () => {
-    const { productId } = useParams();
-    const [product, setProduct] = useState(null);
-    // const [isLoading, setIsLoading] = useState(false);
+  
+  const [product, setproduct] = useState({})
+  const [isLoading, setIsloading] = useState(false)
+  const {productId}=useParams()
+  
+  useEffect(() => {
+    setIsloading(true)
+    axios.get(`${productUrl}/products/${productId}`)
+    .then((res)=>{
+      setproduct(res.data) 
+      setIsloading(false)
 
-    useEffect(() => {
-        // setIsLoading(true);
-        axios.get(`${productUrl}/products/${productId}`)
-            .then((res) => {
-                setProduct(res.data);
-                // setIsLoading(false);
-            }).catch((err) => {
-                console.log(err);
-                // setIsLoading(false);
-            });
-    }, []);
+    }).catch((err)=>{
+      console.log(err)
+      setIsloading(false)
+    })
+  }, [])
 
-    return (
-        <LayOut>
-            {/* {isLoading ? <Loader /> : product && <ProductCard product={product} flex={true} renderDesc={true}/>} */}
-            <ProductCard product={product} flex={true} renderDesc={true} renderAdd={true}/>
-        </LayOut>
-    );
-};
+  return (
+    
+    <LayOut>
+      {isLoading? (<Loader/>):(<ProductCard
+       product={product}
+       flex={true}
+       renderDesc={true}
+       renderAdd={true}
+       />)}
+      
+    </LayOut>
+  )
+}
 
-export default ProductDetail;
+export default ProductDetail
