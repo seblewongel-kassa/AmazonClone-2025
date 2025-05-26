@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
-import aaa from "./product.module.css";
+import styles from "./product.module.css";
 
 const Product = () => {
   const [products, setProducts] = useState();
@@ -18,7 +18,7 @@ const Product = () => {
   }, []);
 
   return (
-    <section className={aaa.products_container}>
+    <section className={styles.products_container}>
       {products?.map((singleProduct) => {
         return <ProductCard product={singleProduct} key={singleProduct.id} renderAdd={true}/>;
       })}

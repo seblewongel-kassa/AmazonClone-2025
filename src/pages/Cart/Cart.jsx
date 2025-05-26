@@ -4,7 +4,7 @@ import { DataContext } from '../../Utility/DataProvider/DataProvider';
 import ProductCard from '../../Components/Products/ProductCard';
 import CurrencyFormat from './../../Components/CurrencyFormat/CurrencyFormat';
 import { Link } from 'react-router-dom';
-import aaa from './cart.module.css'
+import styles from './cart.module.css'
 import { Type } from '../../Utility/action.type';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -31,24 +31,24 @@ const Cart = () => {
   return (
     
     <LayOut>
-      <section className={aaa.container}>
-        <div className={aaa.cart_container}>
+      <section className={styles.container}>
+        <div className={styles.cart_container}>
           <h2>Hello</h2>
               <h3>Your shoping basket</h3>
               <hr />
               {
                 basket?.length==0?(<p>Opps ! No item in your cart</p>):(basket?.map((item,i)=>{
-                  return <section className={aaa.cart_product}>
+                  return <section className={styles.cart_product}>
                     <ProductCard   key={i}     
                     product={item}      
                     renderDesc={true}
                     flex={true}
                     renderAdd={false}
                     />
-                    <div className={aaa.btn_container}>
-                      <button className={aaa.btn} onClick={()=>increment(item)}><IoIosArrowUp size={20}/></button>
+                    <div className={styles.btn_container}>
+                      <button className={styles.btn} onClick={()=>increment(item)}><IoIosArrowUp size={20}/></button>
                       <span>{item.amount}</span>
-                      <button className={aaa.btn} onClick={()=>decrement(item.id)}><IoIosArrowDown size={20}/></button>
+                      <button className={styles.btn} onClick={()=>decrement(item.id)}><IoIosArrowDown size={20}/></button>
                     </div>
                   </section> 
                     
@@ -58,7 +58,7 @@ const Cart = () => {
         </div>
 
         {basket?.length !==0 && (
-          <div className={aaa.subtotal}>
+          <div className={styles.subtotal}>
             <div>
               
                 <p>Subtotal({basket?.length} items)</p>

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { productUrl } from '../../Api/endPoint'
 import ProductCard from '../../Components/Products/ProductCard'
-import aaa from './results.module.css'
+import styles from './results.module.css'
 import Loader from '../../Components/Loader/Loader'
 
 const Results = () => {
@@ -34,7 +34,7 @@ const Results = () => {
         <hr/>
 
         {isLoading?(<Loader/>):(
-          <div className={aaa.products_container}>
+          <div className={styles.products_container}>
           {results?.map((product)=>(
             <ProductCard key={product.id}
             product={product}

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Rating from '@mui/material/Rating';
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat';
-import aaa from './product.module.css'
+import styles from './product.module.css'
 import { Link } from 'react-router-dom';
 import { DataContext } from '../../Utility/DataProvider/DataProvider';
 import { Type } from '../../Utility/action.type';
@@ -23,14 +23,14 @@ const ProductCard = ({product,flex,renderDesc,renderAdd}) => {
     
 
   return (
-    <div className={`${aaa.card_container} ${flex?aaa.product_flexed: ''}`}>
+    <div className={`${styles.card_container} ${flex?styles.product_flexed: ''}`}>
         <Link to={`/products/${id}`}>
             <img src={image} alt="" />
         </Link>
         <div>
             <h3>{title}</h3>
             {renderDesc && <div style={{width:"600px",textAlign:'justify'} }>{description}</div>}
-            <div className={aaa.rating}>
+            <div className={styles.rating}>
                 {/* rating */}
                 <Rating value={rating?.rate || 0} precision={0.1}/>
                 {/* count */}
@@ -42,7 +42,7 @@ const ProductCard = ({product,flex,renderDesc,renderAdd}) => {
             </div>
 
             {
-                renderAdd && <button className={aaa.button} onClick={addToCart}>
+                renderAdd && <button className={styles.button} onClick={addToCart}>
                 add to cart
             </button>
             }
