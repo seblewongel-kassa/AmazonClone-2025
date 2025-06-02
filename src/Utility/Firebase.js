@@ -8,13 +8,14 @@ import "firebase/compat/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCoJjhtnPBj2ZleizRWa3ggqTBNjLtzQ9Y",
-  authDomain: "fir-80089.firebaseapp.com",
-  projectId: "fir-80089",
-  storageBucket: "fir-80089.firebasestorage.app",
-  messagingSenderId: "897624731699",
-  appId: "1:897624731699:web:416ed7def85c159bf27346",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
