@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Landing from "./Pages/Landing/Landing"
+
 import Auth from "./Pages/Auth/Auth";
 import Payment from "./Pages/Payment/Payment";
 import Orders from "./Pages/Orders/Orders";
@@ -10,7 +10,7 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
-
+import Landing from "./Pages/Landing/Landing"
 const stripePromise = loadStripe(
   "pk_test_51RUkTVFH1Y53ZXmhsKNUVSX7W5dr8bYaRPSlCPMdh8MdlNctYg8bGa9Vt45TKsgJ2dcHDhdSAOo4GfCi89rWHVc700P0erJVQI"
 );
